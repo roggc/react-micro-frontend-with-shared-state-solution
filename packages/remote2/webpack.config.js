@@ -29,7 +29,7 @@ module.exports = {
       name: "Remote2",
       filename: "moduleEntry2.js",
       exposes: {
-        "./app": "./src/main/app",
+        "./root": "./src/main/root",
       },
       shared: {
         ...dependencies,
