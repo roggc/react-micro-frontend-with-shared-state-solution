@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from "react";
 
-const Remote1App = lazy(() => import("Remote1/app"));
+const Remote1Root = lazy(() => import("Remote1/root"));
 const Remote2App = lazy(() => import("Remote2/app"));
 
 const App = () => {
   return (
     <>
       <Suspense fallback="loading...">
-        <Remote1App />
+        <Remote1Root />
       </Suspense>
       <Suspense fallback="loading...">
         <Remote2App />

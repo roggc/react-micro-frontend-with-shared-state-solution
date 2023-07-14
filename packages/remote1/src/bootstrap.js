@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "shared_state";
-import App from "./main/app";
+import Root from "./main/root";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider>
-      <App />
+      <Root />
     </Provider>
   </React.StrictMode>
 );
