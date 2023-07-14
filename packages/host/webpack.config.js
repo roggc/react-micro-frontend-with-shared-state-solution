@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { dependencies } = require("./package.json");
 
 module.exports = {
   entry: "./src/index",
@@ -23,6 +25,25 @@ module.exports = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "Host",
+      remotes: {
+        Remote1: "Remote1@http://localhost:3001/moduleEntry1.js",
+        Remote2: "Remote2@http://localhost:3002/moduleEntry2.js",
+      },
+      shared: {
+        ...dependencies,
+        react: {
+          singleton: true,
+        },
+        "react-dom": {
+          singleton: true,
+        },
+        shared_state: {
+          requiredVersion: require("../shared_state/package.json").version,
+        },
+      },
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
