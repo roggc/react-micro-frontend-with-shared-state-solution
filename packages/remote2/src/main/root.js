@@ -1,11 +1,11 @@
 import { Provider } from "../slices";
 import App from "./app";
-import React from "react";
+import React, { memo } from "react";
 
-const Root = () => (
+const Root = memo(() => (
   <Provider>
     <App />
   </Provider>
-);
+));
 
 export default Root;

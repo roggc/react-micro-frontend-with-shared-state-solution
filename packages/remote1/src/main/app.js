@@ -5,7 +5,9 @@ import { useSlice as useLocalSlice } from "../slices";
 const App = () => {
   const [, setCount1] = useSlice("count1");
   const [, reduxDispatch, { increment }] = useSlice("count2");
-  const [name] = useLocalSlice("name");
+  const [localCount1, setLocalCount1] = useLocalSlice("count1");
+  const [localCount2, reduxLocalDispatch, { increment: localIncrement }] =
+    useLocalSlice("count2");
   return (
     <>
       <div>
@@ -14,7 +16,14 @@ const App = () => {
       <div>
         <button onClick={() => reduxDispatch(increment())}>+</button>
       </div>
-      <div>{name}</div>
+      <div>
+        <button onClick={() => setLocalCount1((c) => c + 1)}>+</button>
+        {localCount1}
+      </div>
+      <div>
+        <button onClick={() => reduxLocalDispatch(localIncrement())}>+</button>
+        {localCount2}
+      </div>
     </>
   );
 };
