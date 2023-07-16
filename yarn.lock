@@ -5585,18 +5585,10 @@ rc@^1.0.1, rc@^1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-context-slices@^9.0.14:
-  version "9.0.14"
-  resolved "https://registry.yarnpkg.com/react-context-slices/-/react-context-slices-9.0.14.tgz#2537505ebbd00061beffdce2ab5ff8eb2409e641"
-  integrity sha512-2Lw/y6J71qxOyOV2vcjzseqUDyNthx1GTBu6RrLo2qbe8jjjHUUnK6ww1odX3pmvfyNPRC9OLV+7HNDH/bMLpQ==
-  dependencies:
-    "@reduxjs/toolkit" "^1.9.5"
-    react-redux "^8.1.1"
-
-react-context-slices@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/react-context-slices/-/react-context-slices-9.1.0.tgz#f7c3bac0dd5dba9d065bbb63e8ba3d7defa946d2"
-  integrity sha512-R5vm5o+zxdoza9KKR4EZYYEsbIh+uYNVMl6LuIkkQcYNtup9K/14RHPsF3DHZx8sBqBx0SnpDPZgH1LpXivv5g==
+react-context-slices@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/react-context-slices/-/react-context-slices-9.1.1.tgz#28d7ed81d05088636ded3c498b5dc768d1cfcc20"
+  integrity sha512-SIholwQhxro5Z6MIjCzdDRtZO8uyaRv5W9jKmAqe++TBCX+LVDOZUpZGu5USHWXYQcp30yohESERdRDhBGqGBw==
   dependencies:
     "@reduxjs/toolkit" "^1.9.5"
     react-redux "^8.1.1"
