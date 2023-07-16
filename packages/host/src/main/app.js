@@ -8,6 +8,11 @@ const Remote2Root = lazy(() => import("Remote2/root"));
 const App = () => {
   const [status] = useLocalSlice("status");
   const [count1] = useSlice("count1");
+  const [count2, reduxDispatch, { increment }] = useSlice("count2");
+  const [name] = useSlice("name");
+  const [localCount1] = useLocalSlice("count1");
+  const [count2bis, localReduxDispatch, { increment: count2bisIncrement }] =
+    useLocalSlice("count2bis");
   return (
     <>
       <Suspense fallback="loading...">
@@ -18,6 +23,14 @@ const App = () => {
       </Suspense>
       <div>{status}</div>
       <div>{count1}</div>
+      <div>{count2}</div>
+      <button onClick={() => reduxDispatch(increment())}>+</button>
+      {name ? <div>{name}</div> : <div>no name</div>}
+      <div>{localCount1}</div>
+      <div>{count2bis}</div>
+      <button onClick={() => localReduxDispatch(count2bisIncrement())}>
+        +
+      </button>
     </>
   );
 };
